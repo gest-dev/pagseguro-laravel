@@ -1,6 +1,6 @@
 <?php
 
-namespace Gezer\PagSeguro;
+namespace Oliveiracorp\PagSeguro;
 
 class PagSeguroBoleto extends PagSeguroClient
 {
@@ -58,7 +58,7 @@ class PagSeguroBoleto extends PagSeguroClient
      *
      * @param array $customerInfo
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      *
      * @return PagSeguroBoleto
      */
@@ -93,7 +93,7 @@ class PagSeguroBoleto extends PagSeguroClient
      *
      * @param array $customerInfo
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      */
     private function validateCustomerInfo(array $customerInfo)
     {
@@ -119,7 +119,7 @@ class PagSeguroBoleto extends PagSeguroClient
      *
      * @param array $customerAddress
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      *
      * @return PagSeguroBoleto
      */
@@ -145,7 +145,7 @@ class PagSeguroBoleto extends PagSeguroClient
      *
      * @param array $customerAddress
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      */
     private function validateCustomerAddress(array $customerAddress)
     {
@@ -249,7 +249,7 @@ class PagSeguroBoleto extends PagSeguroClient
     /**
      * Envia o boleto para o pagseguro.
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      *
      * @return \SimpleXMLElement
      */
@@ -286,7 +286,7 @@ class PagSeguroBoleto extends PagSeguroClient
     /**
      * Valida os dados de pagamento.
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      */
     private function validatePaymentSettings()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gezer\PagSeguro;
+namespace Oliveiracorp\PagSeguro;
 
 class PagSeguroClient extends PagSeguroConfig
 {
@@ -12,7 +12,7 @@ class PagSeguroClient extends PagSeguroConfig
      * @param bool   $post
      * @param array  $headers
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      *
      * @return \SimpleXMLElement
      */
@@ -52,7 +52,7 @@ class PagSeguroClient extends PagSeguroConfig
      * @param string $method
      * @param array  $headers
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      *
      * @return \SimpleXMLElement
      */
@@ -134,7 +134,7 @@ class PagSeguroClient extends PagSeguroConfig
      *
      * @param array $result
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      *
      * @return \SimpleXMLElement
      */
@@ -167,7 +167,7 @@ class PagSeguroClient extends PagSeguroConfig
      *
      * @param array $result
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      *
      * @return mixed
      */
@@ -246,7 +246,7 @@ class PagSeguroClient extends PagSeguroConfig
      * @param array $data
      * @param array $rules
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      */
     protected function validate($data, $rules)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Gezer\PagSeguro;
+namespace Oliveiracorp\PagSeguro;
 
 class PagSeguro extends PagSeguroClient
 {

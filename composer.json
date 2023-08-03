@@ -1,5 +1,5 @@
 {
-    "name": "gezer/laravel-pagseguro",
+    "name": "oliveiracorp/laravel-pagseguro",
     "description": "PagSeguro Checkout Transparente e Pagamento Recorrente(Assinaturas) no Laravel 5.*, 6.*, 7.*, 8.* e 9.*",
     "type": "library",
     "license": "MIT",
@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Gezer\\PagSeguro\\": "src/Gezer/"
+            "Oliveiracorp\\PagSeguro\\": "src/Oliveiracorp/"
         }
     },
     "minimum-stability": "dev",
@@ -23,12 +23,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Gezer\\PagSeguro\\PagSeguroServiceProvider"
+                "Oliveiracorp\\PagSeguro\\PagSeguroServiceProvider"
             ],
             "aliases": {
-                "PagSeguro": "Gezer\\PagSeguro\\PagSeguroFacade",
-                "PagSeguroRecorrente": "Gezer\\PagSeguro\\PagSeguroRecorrenteFacade",
-                "PagSeguroBoleto": "Gezer\\PagSeguro\\PagSeguroBoletoFacade"
+                "PagSeguro": "Oliveiracorp\\PagSeguro\\PagSeguroFacade",
+                "PagSeguroRecorrente": "Oliveiracorp\\PagSeguro\\PagSeguroRecorrenteFacade",
+                "PagSeguroBoleto": "Oliveiracorp\\PagSeguro\\PagSeguroBoletoFacade",
+                "PagSeguroPix": "Oliveiracorp\\PagSeguro\\PagSeguroPixFacade"
             }
         }
     }

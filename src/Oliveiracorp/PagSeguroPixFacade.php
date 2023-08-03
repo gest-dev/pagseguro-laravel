@@ -1,13 +1,13 @@
 <?php
 
-namespace Gezer\PagSeguro;
+namespace Oliveiracorp\PagSeguro;
 
 use Illuminate\Support\Facades\Facade;
 
-class PagSeguroRecorrenteFacade extends Facade
+class PagSeguroPixFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'pagseguro_recorrente';
+        return 'pagseguro_pix';
     }
 }

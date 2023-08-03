@@ -1,6 +1,6 @@
 <?php
 
-namespace Gezer\PagSeguro;
+namespace Oliveiracorp\PagSeguro;
 
 class PagSeguroPix extends PagSeguroClient
 {
@@ -171,7 +171,7 @@ class PagSeguroPix extends PagSeguroClient
      *
      * @param array $customerInfo
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      *
      * @return PagSeguroPix
      */
@@ -194,7 +194,7 @@ class PagSeguroPix extends PagSeguroClient
      *
      * @param array $customerInfo
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      */
     private function validateCustomerInfo(array $customerInfo)
     {
@@ -304,7 +304,7 @@ class PagSeguroPix extends PagSeguroClient
     /**
      * Envia o pix para o pagseguro.
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      *
      * @return \SimpleXMLElement
      */
@@ -342,7 +342,7 @@ class PagSeguroPix extends PagSeguroClient
     /**
      * Valida os dados de pagamento.
      *
-     * @throws \Gezer\PagSeguro\PagSeguroException
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
      */
     private function validatePaymentSettings()
     {

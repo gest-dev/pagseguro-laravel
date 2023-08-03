@@ -1,15 +1,15 @@
 <p align="center"><img src="https://stc.pagseguro.uol.com.br/pagseguro/i/logos/logo_pagseguro200x41.png"></p>
 
 <p align="center">
-<a href="https://www.codacy.com/app/fernando-bandeira/laravel-pagseguro?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gezer/laravel-pagseguro&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/2b049d7be509420c810493c828eb943d" alt="Codacy Badge"></a>
-<a href="https://packagist.org/packages/gezer/laravel-pagseguro"><img src="https://poser.pugx.org/gezer/laravel-pagseguro/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/gezer/laravel-pagseguro"><img src="https://poser.pugx.org/gezer/laravel-pagseguro/d/monthly" alt="Monthly Downloads"></a>
-<a href="https://packagist.org/packages/gezer/laravel-pagseguro"><img src="https://poser.pugx.org/gezer/laravel-pagseguro/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://www.codacy.com/app/fernando-bandeira/laravel-pagseguro?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=oliveiracorp/laravel-pagseguro&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/2b049d7be509420c810493c828eb943d" alt="Codacy Badge"></a>
+<a href="https://packagist.org/packages/oliveiracorp/laravel-pagseguro"><img src="https://poser.pugx.org/oliveiracorp/laravel-pagseguro/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/oliveiracorp/laravel-pagseguro"><img src="https://poser.pugx.org/oliveiracorp/laravel-pagseguro/d/monthly" alt="Monthly Downloads"></a>
+<a href="https://packagist.org/packages/oliveiracorp/laravel-pagseguro"><img src="https://poser.pugx.org/oliveiracorp/laravel-pagseguro/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://laravel.com"><img src="https://img.shields.io/badge/laravel-5.*-ff69b4.svg?style=flat-square" alt="License"></a>
 </p>
 
 #Install 
-composer require gezer/laravel-pagseguro
+composer require oliveiracorp/laravel-pagseguro
 
 Visite a [Wiki](https://github.com/gezer/laravel-pagseguro/wiki) para verificar os detalhes de como utilizar esta Package.
 
@@ -53,7 +53,7 @@ try {
       'paymentMethod' => 'boleto'
     ]);
 }
-catch(\gezer\PagSeguro\PagSeguroException $e) {
+catch(\Oliveiracorp\PagSeguro\PagSeguroException $e) {
     $e->getCode(); //codigo do erro
     $e->getMessage(); //mensagem do erro
 }
@@ -61,8 +61,6 @@ catch(\gezer\PagSeguro\PagSeguroException $e) {
 
 #### Créditos
 Criador: [fernandobandeira](https://github.com/fernandobandeira)
-
-[Contribuidores](https://github.com/gezer/laravel-pagseguro/graphs/contributors)
 
 PagSeguro Recorrente (Inicial): [vanessasoutoc](https://github.com/vanessasoutoc)
 

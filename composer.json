@@ -1,0 +1,35 @@
+{
+    "name": "gezer/laravel-pagseguro",
+    "description": "PagSeguro Checkout Transparente e Pagamento Recorrente(Assinaturas) no Laravel 5.*, 6.*, 7.*, 8.* e 9.*",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "pagseguro", "transparente", "recorrente", "assinaturas", "pix"],
+    "authors": [
+        {
+            "name": "Fernando Henrique Bandeira",
+            "email": "fernando.bandeira94@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gezer\\PagSeguro\\": "src/Gezer/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.1.16",
+        "illuminate/support": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gezer\\PagSeguro\\PagSeguroServiceProvider"
+            ],
+            "aliases": {
+                "PagSeguro": "Gezer\\PagSeguro\\PagSeguroFacade",
+                "PagSeguroRecorrente": "Gezer\\PagSeguro\\PagSeguroRecorrenteFacade",
+                "PagSeguroBoleto": "Gezer\\PagSeguro\\PagSeguroBoletoFacade"
+            }
+        }
+    }
+}

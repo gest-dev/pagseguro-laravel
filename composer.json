@@ -6,8 +6,8 @@
     "keywords": ["laravel", "pagseguro", "transparente", "recorrente", "assinaturas", "pix"],
     "authors": [
         {
-            "name": "Fernando Henrique Bandeira",
-            "email": "fernando.bandeira94@gmail.com"
+            "name": "Gezer Oliveiracorp",
+            "email": "gezerramo@gmail.com"
         }
     ],
     "autoload": {

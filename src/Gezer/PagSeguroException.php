@@ -1,6 +1,6 @@
 <?php
 
-namespace Artistas\PagSeguro;
+namespace Gezer\PagSeguro;
 
 class PagSeguroException extends \Exception
 {

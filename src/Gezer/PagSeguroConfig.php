@@ -1,6 +1,6 @@
 <?php
 
-namespace Artistas\PagSeguro;
+namespace Gezer\PagSeguro;
 
 use Illuminate\Validation\Factory as Validator;
 use Psr\Log\LoggerInterface as Log;

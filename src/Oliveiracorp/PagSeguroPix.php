@@ -40,6 +40,13 @@ class PagSeguroPix extends PagSeguroClient
     private $amount;
 
     /**
+     * Define dia spara expiração do pix.
+     *
+     * @var int
+     */
+    private $daysExpiration = 3;
+
+    /**
      * Instruções do pix.
      *
      * @var string
@@ -136,6 +143,44 @@ class PagSeguroPix extends PagSeguroClient
         $this->numberOfPayments = $this->sanitizeNumber($numberOfPayments);
 
         return $this;
+    }
+
+    /**
+     * Define a quantidade dias para expiração do pix gerado no pagseguro.
+     *
+     * @param int $daysExpiration
+     *
+     * @return $this
+     */
+    public function setDaysExpiration($daysExpiration)
+    {
+
+        $daysArray = [
+            'days' => $daysExpiration,
+        ];
+        $this->validateDaysExpiration($daysArray);
+
+        $this->daysExpiration = $daysExpiration;
+
+        return $this;
+    }
+
+    /**
+     * Valida os dados contidos na array de informações data de expiração em dias.
+     *
+     * @param array $daysExpiration
+     *
+     * @throws \Oliveiracorp\PagSeguro\PagSeguroException
+     */
+    private function validateDaysExpiration(array $daysExpiration)
+    {
+
+        $rules = [
+            'days' => 'required|integer|between:1,30',
+        ];
+
+        $this->validate($daysExpiration, $rules);
+
     }
 
     /**
@@ -310,7 +355,7 @@ class PagSeguroPix extends PagSeguroClient
      */
     public function setNotificationUrl(string $url_notification)
     {
-       
+
         $urlArray = [
             'url' => $url_notification,
         ];
@@ -346,7 +391,7 @@ class PagSeguroPix extends PagSeguroClient
     public function sendPix()
     {
         if (empty($this->firstDueDate)) {
-            self::setFirstDueDate(\Carbon\Carbon::now()->addDays(3));
+            self::setFirstDueDate(\Carbon\Carbon::now()->addDays($this->daysExpiration));
         }
 
         $this->validatePaymentSettings();

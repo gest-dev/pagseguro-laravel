@@ -64,3 +64,4 @@ Criador: [fernandobandeira](https://github.com/fernandobandeira)
 
 PagSeguro Recorrente (Inicial): [vanessasoutoc](https://github.com/vanessasoutoc)
 
+PagSeguro Pix (Inicial): [gezer](https://github.com/gezerramos)

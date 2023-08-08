@@ -302,6 +302,41 @@ class PagSeguroPix extends PagSeguroClient
     }
 
     /**
+     * Define o url de notificação.
+     *
+     * @param array $url_notification
+     *
+     * @return $this
+     */
+    public function setNotificationUrl(string $url_notification)
+    {
+       
+        $urlArray = [
+            'url' => $url_notification,
+        ];
+
+        $this->validateNotificationUrl($urlArray);
+        $this->notificationURL = $url_notification;
+
+        return $this;
+    }
+
+    /**
+     * Valida os dados contidos na array de notificação.
+     *
+     * @param array $url_notification
+     */
+    private function validateNotificationUrl(array $url_notification)
+    {
+
+        $rules = [
+            'url' => 'required|url',
+        ];
+
+        $this->validate($url_notification, $rules);
+    }
+
+    /**
      * Envia o pix para o pagseguro.
      *
      * @throws \Oliveiracorp\PagSeguro\PagSeguroException

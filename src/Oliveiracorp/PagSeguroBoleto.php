@@ -69,18 +69,18 @@ class PagSeguroBoleto extends PagSeguroClient
         $customerPhone = $this->sanitizeNumber($customerInfo, 'phone');
 
         $this->custumer['customer'] = [
-            'name'      => $this->sanitize($customerInfo, 'name'),
-            'email'     => $customerEmail,
+            'name' => $this->sanitize($customerInfo, 'name'),
+            'email' => $customerEmail,
         ];
 
         $this->custumer['customer']['document'] = [
-            'type'   => !empty($this->sanitizeNumber($customerInfo, 'customerCPF')) ? 'CPF' : 'CNPJ',
-            'value'  => !empty($this->sanitizeNumber($customerInfo, 'customerCPF')) ? $this->sanitizeNumber($customerInfo, 'customerCPF') : $this->sanitizeNumber($customerInfo, 'customerCNPJ'),
+            'type' => !empty($this->sanitizeNumber($customerInfo, 'customerCPF')) ? 'CPF' : 'CNPJ',
+            'value' => !empty($this->sanitizeNumber($customerInfo, 'customerCPF')) ? $this->sanitizeNumber($customerInfo, 'customerCPF') : $this->sanitizeNumber($customerInfo, 'customerCNPJ'),
         ];
 
         $this->custumer['customer']['phone'] = [
-            'areaCode'  => substr($customerPhone, 0, 2),
-            'number'    => substr($customerPhone, 2),
+            'areaCode' => substr($customerPhone, 0, 2),
+            'number' => substr($customerPhone, 2),
         ];
 
         $this->validateCustomerInfo($this->custumer['customer']);
@@ -104,14 +104,48 @@ class PagSeguroBoleto extends PagSeguroClient
         }
 
         $rules = [
-            'name'              => 'required|max:50',
-            'phone.areaCode'    => 'required|digits:2',
-            'phone.number'      => 'required|digits_between:8,9',
-            'email'             => 'required|email|max:60',
-            'document.value'    => $type,
+            'name' => 'required|max:50',
+            'phone.areaCode' => 'required|digits:2',
+            'phone.number' => 'required|digits_between:8,9',
+            'email' => 'required|email|max:60',
+            'document.value' => $type,
         ];
 
         $this->validate($customerInfo, $rules);
+    }
+    /**
+     * Define o url de notificação.
+     *
+     * @param array $url_notification
+     *
+     * @return $this
+     */
+    public function setNotificationUrl(string $url_notification)
+    {
+
+        $urlArray = [
+            'url' => $url_notification,
+        ];
+
+        $this->validateNotificationUrl($urlArray);
+        $this->notificationURL = $url_notification;
+
+        return $this;
+    }
+
+    /**
+     * Valida os dados contidos na array de notificação.
+     *
+     * @param array $url_notification
+     */
+    private function validateNotificationUrl(array $url_notification)
+    {
+
+        $rules = [
+            'url' => 'required|url',
+        ];
+
+        $this->validate($url_notification, $rules);
     }
 
     /**
@@ -126,13 +160,13 @@ class PagSeguroBoleto extends PagSeguroClient
     public function setCustomerAddress(array $customerAddress)
     {
         $this->custumer['address'] = [
-            'street'     => $this->sanitize($customerAddress, 'street'),
-            'number'     => $this->sanitize($customerAddress, 'number'),
+            'street' => $this->sanitize($customerAddress, 'street'),
+            'number' => $this->sanitize($customerAddress, 'number'),
             'complement' => $this->sanitize($customerAddress, 'complement'),
-            'district'   => $this->sanitize($customerAddress, 'district'),
+            'district' => $this->sanitize($customerAddress, 'district'),
             'postalCode' => $this->sanitizeNumber($customerAddress, 'postalCode'),
-            'city'       => $this->sanitize($customerAddress, 'city'),
-            'state'      => strtoupper($this->checkValue($customerAddress, 'state')),
+            'city' => $this->sanitize($customerAddress, 'city'),
+            'state' => strtoupper($this->checkValue($customerAddress, 'state')),
         ];
 
         $this->validateCustomerAddress($this->custumer['address']);
@@ -150,13 +184,13 @@ class PagSeguroBoleto extends PagSeguroClient
     private function validateCustomerAddress(array $customerAddress)
     {
         $rules = [
-            'street'     => 'required|max:80',
-            'number'     => 'required|max:20',
+            'street' => 'required|max:80',
+            'number' => 'required|max:20',
             'complement' => 'max:40',
-            'district'   => 'required|max:60',
+            'district' => 'required|max:60',
             'postalCode' => 'required|digits:8',
-            'city'       => 'required|min:2|max:60',
-            'state'      => 'required|min:2|max:2',
+            'city' => 'required|min:2|max:60',
+            'state' => 'required|min:2|max:2',
         ];
 
         $this->validate($customerAddress, $rules);
@@ -266,14 +300,14 @@ class PagSeguroBoleto extends PagSeguroClient
         $this->validatePaymentSettings();
 
         $config = [
-            'reference'         => $this->reference,
-            'amount'            => $this->amount,
-            'notificationURL'   => $this->notificationURL,
-            'description'       => $this->description,
-            'instructions'      => $this->instructions,
-            'periodicity'       => 'monthly',
-            'numberOfPayments'  => $this->numberOfPayments,
-            'firstDueDate'      => $this->firstDueDate,
+            'reference' => $this->reference,
+            'amount' => $this->amount,
+            'notificationURL' => $this->notificationURL,
+            'description' => $this->description,
+            'instructions' => $this->instructions,
+            'periodicity' => 'monthly',
+            'numberOfPayments' => $this->numberOfPayments,
+            'firstDueDate' => $this->firstDueDate,
         ];
 
         $custumerArray = array_merge($this->custumer['customer'], ['address' => $this->custumer['address']]);
